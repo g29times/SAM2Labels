@@ -1,0 +1,127 @@
+{
+    "id": 1,
+    "annotations": [
+        {
+            "id": 1,
+            "completed_by": 1,
+            "result": [
+                {
+                    "original_width": 931,
+                    "original_height": 1153,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 0.419372493035043,
+                        "y": 0.3343381989240026,
+                        "width": 99.0878030385674,
+                        "height": 98.73049521797755,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "poster"
+                        ]
+                    },
+                    "id": "3YKpX1Mwjw",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 931,
+                    "original_height": 1153,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 10.86332196195707,
+                        "y": 14.77372367177336,
+                        "width": 30.48457423291068,
+                        "height": 24.67416860906331,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "art"
+                        ]
+                    },
+                    "id": "wxSV7gj4Ak",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 931,
+                    "original_height": 1153,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 22.993167668228885,
+                        "y": 75.63846055466718,
+                        "width": 10.543644594710829,
+                        "height": 21.562995480539897,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "person"
+                        ]
+                    },
+                    "id": "d5dot7KV6q",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 931,
+                    "original_height": 1153,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 8.1085205078125,
+                        "y": 41.071623300120606,
+                        "width": 6.079245791655477,
+                        "height": 5.160511873746477,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "planet"
+                        ]
+                    },
+                    "id": "eVswXZUSiw",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                }
+            ],
+            "was_cancelled": false,
+            "ground_truth": false,
+            "created_at": "2024-05-10T11:31:03.293095Z",
+            "updated_at": "2024-05-10T11:56:29.959859Z",
+            "draft_created_at": null,
+            "lead_time": 848.264,
+            "prediction": {},
+            "result_count": 0,
+            "unique_id": "07977e78-6857-420c-a495-61cbc509b92b",
+            "import_id": null,
+            "last_action": null,
+            "task": 10,
+            "project": 3,
+            "updated_by": 1,
+            "parent_prediction": null,
+            "parent_annotation": null,
+            "last_created_by": null
+        }
+    ],
+    "file_upload": "5f553810-label.png",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+        "image": "\\/data\\/upload\\/6\\/5f553810-label.png"
+    },
+    "meta": {},
+    "created_at": "2024-05-11T05:52:10.860735Z",
+    "updated_at": "2024-05-11T05:54:02.451356Z",
+    "inner_id": 1,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 5,
+    "updated_by": 1,
+    "comment_authors": []
+}

@@ -1,0 +1,1165 @@
+<View style="display:flex">
+
+  <View style="padding: 25px;
+               box-shadow: 2px 2px 8px #AAA;
+               min-width:500px;">
+          <Image name="image" value="$image"/>
+  </View>
+
+<!-- 图纸类型 -->
+  <!-- <Header value="Image Type"/> -->
+  <!-- <Header value="图纸类型"/>  -->
+
+<!-- 图纸分类 -->
+  <!-- <Header value="Drawing Classification"/> -->
+
+  <View style="padding: 25px;
+               box-shadow: 2px 2px 8px #AAA;
+            	min-width:500px;">
+
+  <!-- 图纸分类 -->
+    <Header value="图纸分类（多选）"/>
+
+    <Choices name="drawing_classification" toName="image" choice="multiple" showInline="true"> 
+            <Choice alias="result" value="成果图"/>
+            <Choice alias="blue_print" value="过程图"/>   
+            <Choice alias="technical_drawing" value="技术图纸"/>   
+            <Choice alias="analysis" value="分析图"/>   
+            <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 图纸分类其他 -->
+    <View visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="others" >
+  		<TextArea name="drawing_classification_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 成果图分类 -->
+    <View visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="result" >
+        <!-- <Header value="Type of Result"/>     -->
+        <Header value="成果图分类（单选）"/>    
+    </View>
+  
+    <Choices name="type_of_result" toName="image" showInline="true" choice="single" visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="result">     
+          <Choice alias="photo" value="实景照片"/>
+          <Choice alias="rendering" value="渲染图"/>   
+          <Choice alias="model" value="模型图"/>
+          <Choice alias="others" value="其他"/>  
+    </Choices>
+  
+  <!-- 成果图分类其他 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_result" whenChoiceValue="others" >
+  		<TextArea name="type_of_result_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 技术图纸分类 -->
+    <View visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="technical_drawing" >
+        <!-- <Header value="Type of Technical Drawing"/>   -->
+        <Header value="技术图纸分类（多选）"/>   
+    </View>
+  
+    <Choices name="type_of_technical_drawing" toName="image" showInline="true" choice="multiple" visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="technical_drawing">     
+          <Choice alias="plan" value="平面图"/>
+          <Choice alias="facade" value="立面图"/>   
+          <Choice alias="section" value="剖面图"/>
+          <Choice alias="section_perspective" value="剖透视"/>
+          <Choice alias="masterplan" value="总图"/>   
+          <Choice alias="axonometric_drawing" value="轴侧图"/>
+          <Choice alias="others" value="其他"/>            
+    </Choices>
+
+  <!-- 技术图分类其他 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_technical_drawing" whenChoiceValue="others" >
+  		<TextArea name="type_of_technical_drawing_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 分析图分类 -->
+    <View visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="analysis" >
+        <!-- <Header value="Type of Analysis"/>   -->
+        <Header value="分析图分类（多选）/"/>   
+    </View>
+  
+    <Choices name="type_of_analysis" toName="image" showInline="true" choice="multiple" visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="analysis">     
+          <Choice alias="diagram" value="图解"/>
+          <Choice alias="exploded" value="爆炸图"/>   
+          <Choice alias="others" value="其他"/>   
+    </Choices>
+
+  <!-- 分析图分类其他 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_analysis" whenChoiceValue="others" >
+  		<TextArea name="type_of_analysis_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 过程图分类 -->
+    <View visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="blue_print" >
+        <!-- <Header value="Blue Print"/>     -->
+        <Header value="过程图分类"/>    
+    </View>
+
+  <!-- 建模环境 -->
+    <View visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="blue_print" >
+        <!-- <Header value="Modeling Environment"/>     -->
+        <Header value="建模环境（单选）"/>    
+    </View>
+  
+    <Choices name="modeling_environment_of_blue_print" toName="image" showInline="true" choice="single" visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="blue_print">     
+          <Choice value="maya"/>
+          <Choice value="sketch_up"/>   
+          <Choice value="rhino"/>
+          <Choice value="3dsmax"/>     
+          <Choice alias="others" value="其他"/>      
+    </Choices>
+
+  <!-- 建模环境其他 -->
+    <View visibleWhen="choice-selected" whenTagName="modeling_environment_of_blue_print" whenChoiceValue="others" >
+  		<TextArea name="modeling_environment_of_blue_print_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 建模精度 -->
+    <View visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="blue_print" >
+        <!-- <Header value="Modeling Accuracy"/>   -->
+        <Header value="建模精度（单选）"/>    
+    </View>
+  
+    <Choices name="modeling_accuracy_of_blue_print" toName="image" showInline="true" choice="single" visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="blue_print">     
+          <Choice alias="mass" value="体块"/>
+          <Choice alias="rough" value="草模"/>   
+          <Choice alias= "exquisite" value="精模"/>    
+    </Choices> 
+
+  <!-- 材质精度 -->
+    <View visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="blue_print" >
+        <!-- <Header value="Material Completeness"/>    -->
+        <Header value="材质精度（单选）"/>   
+    </View>
+  
+    <Choices name="material_completeness_of_blue_print" toName="image" showInline="true" choice="single" visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="blue_print">     
+          <Choice alias="blank" value="白模"/>
+          <Choice alias="rough" value="草模"/>   
+          <Choice alias="exquisite" value="精模"/>    
+    </Choices> 
+
+  <!-- 背景精度 -->
+    <View visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="blue_print" >
+        <!-- <Header value="Background Completeness"/>    -->
+        <Header value="背景精度（单选）"/>  
+    </View>
+  
+    <Choices name="background_completeness_of_blue_print" toName="image" showInline="true" choice="single" visibleWhen="choice-selected" whenTagName="drawing_classification" whenChoiceValue="blue_print">     
+          <Choice alias="blank" value="白模"/>
+          <Choice alias="rough" value="草模"/>   
+          <Choice alias="exquisite" value="精模"/>     
+    </Choices> 
+
+  <!-- 表现形式 -->
+    <!-- <Header value="Expression Mean"/> -->
+    <Header value="表现形式（单选）"/>
+    <Choices name="expression_mean" toName="image" choice="single" showInline="true"> 
+            <Choice alias="hand_painted" value="手绘"/>
+            <Choice alias="computer_painted" value="机图"/>   
+    </Choices>
+
+  <!-- 手绘分类 -->
+    <View visibleWhen="choice-selected" whenTagName="expression_mean" whenChoiceValue="hand_painted" >
+        <!-- <Header value="Hand Painted"/> -->
+        <Header value="手绘分类（多选）"/>
+    </View>
+
+    <Choices name="hand_painted" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="expression_mean" whenChoiceValue="hand_painted"> 
+            <Choice alias="sketch" value="素描"/>
+            <Choice alias="pen" value="钢笔"/>   
+            <Choice alias="watercolor" value="水彩"/>   
+            <Choice alias="marker" value="马克笔"/>  
+            <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 手绘分类其他 -->
+    <View visibleWhen="choice-selected" whenTagName="hand_painted" whenChoiceValue="others" >
+  		<TextArea name="hand_painted_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 机图分类 -->
+    <View visibleWhen="choice-selected" whenTagName="expression_mean" whenChoiceValue="computer_painted" >
+        <!-- <Header value="Computer Painted"/> -->
+        <Header value="机图分类（多选）"/>
+    </View>
+
+    <Choices name="computer_painted" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="expression_mean" whenChoiceValue="computer_painted"> 
+            <Choice alias="rendering" value="渲染"/>
+            <Choice alias="collage" value="拼贴填色"/>   
+            <Choice alias="lineart" value="线稿"/>   
+            <Choice alias="others" value="其他"/>  
+    </Choices>
+  
+  <!-- 机图分类其他 -->
+    <View visibleWhen="choice-selected" whenTagName="computer_painted" whenChoiceValue="others" >
+  		<TextArea name="computer_painted_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 设计分类 -->
+    <!-- <Header value="Design Type"/> -->
+    <Header value="设计分类（单选）"/> 
+
+    <Choices name="design_type" toName="image" choice="single" showInline="true"> 
+        <Choice alias="architecture" value="建筑"/>
+        <Choice alias="interior" value="室内"/>   
+        <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 设计分类其他 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="others" >
+  		<TextArea name="design_type_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 视角 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Perspective"/>     -->
+        <Header value="视角（多选）"/> 
+    </View>
+  
+    <Choices name="perspective" toName="image" showInline="true" choice="multiple" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">     
+          <Choice alias="site_plan" value="总平"/>          
+          <Choice alias="bird_view" value="鸟瞰"/>
+          <Choice alias="semi_bird_view" value="半鸟瞰"/>   
+          <Choice alias="human_perspective" value="人视点"/>
+          <Choice alias="front_view" value="正视图"/>
+          <Choice alias="lookup" value="仰视"/> 
+          <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 视角其他 -->
+    <View visibleWhen="choice-selected" whenTagName="perspective" whenChoiceValue="others" >
+  		<TextArea name="perspective_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 时间 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Time"/>     -->
+        <Header value="时间（单选）"/>    
+    </View>
+
+    <Choices name="time" toName="image" showInline="true" choice="single" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">     
+          <Choice alias="morning" value="清晨"/>
+          <Choice alias="daytime" value="白天"/>   
+          <Choice alias="dusk" value="黄昏"/>
+          <Choice alias="light_night" value="浅夜"/>
+          <Choice alias="late_night" value="深夜"/> 
+          <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 时间其他 -->
+    <View visibleWhen="choice-selected" whenTagName="time" whenChoiceValue="others" >
+  		<TextArea name="time_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 季节 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Season"/>     -->
+        <Header value="季节（单选）"/>   
+    </View>
+
+    <Choices name="season" toName="image" showInline="true" choice="single" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">     
+          <Choice alias="spring" value="春"/>
+          <Choice alias="summer" value="夏"/>   
+          <Choice alias="autumn" value="秋"/>
+          <Choice alias="winter" value="冬"/>
+    </Choices>
+
+  <!-- 天气 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Weather"/>  -->
+        <Header value="天气（多选）"/>    
+    </View>
+
+    <Choices name="weather" toName="image" showInline="true" choice="multiple" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">     
+          <Choice alias="sunny" value="晴天"/>
+          <Choice alias="overcast" value="阴天"/>
+          <Choice alias="cloudy" value="多云"/>   
+          <Choice alias="rain" value="雨天"/>
+          <Choice alias="snow" value="雪天"/>
+          <Choice alias="mist" value="薄雾"/>   
+          <Choice alias="smog" value="浓雾"/>
+          <Choice alias="thunder" value="雷电"/>
+          <Choice alias="others" value="其他"/>            
+    </Choices>
+
+  <!-- 天气其他 -->
+    <View visibleWhen="choice-selected" whenTagName="weather" whenChoiceValue="others" >
+  		<TextArea name="weather_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 天空颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">
+        <!-- <Header value="sky_color"/>     -->
+        <Header value="天空颜色（单选标签后进行选择，建议选择2-3点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+    <KeyPointLabels name="sky_color" toName="image">
+      <Label alias="sky_color" value="天色" background="red" />
+    </KeyPointLabels>
+    </View>
+
+  <!-- 建筑功能一级标签 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Function of Architecture"/>     -->
+        <Header value="建筑功能（多选）"/>    
+    </View>
+    
+    <Choices name="function_architecture" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="office" value="办公"/> 
+      <Choice alias="business" value="商业"/> 
+      <Choice alias="industrial" value="工业"/> 
+      <Choice alias="residential" value="住宅"/> 
+      <Choice alias="hotel" value="酒店"/> 
+      <Choice alias="educational_and_research" value="学校科研"/> 
+      <Choice alias="transportation" value="交通"/> 
+      <Choice alias="medical_and_elderly_care" value="医疗养老"/> 
+      <Choice alias="sports" value="体育"/> 
+      <Choice alias="cultural" value="文化"/> 
+      <Choice alias="public_service" value="公共服务"/> 
+      <Choice alias="agriclture_and_animal_husbandry" value="农牧业"/> 
+      <Choice alias="others" value="其他"/>      
+    </Choices>
+
+  <!-- 建筑功能一级标签其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 建筑功能二级标签 -->
+  <!-- 办公 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="office" >
+        <!-- <Header value="office"/>     -->
+        <Header value="办公（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_office" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="office">       
+      <Choice alias="office_building" value="办公楼"/> 
+      <Choice alias="office_park" value="办公园区"/> 
+      <Choice alias="government_building" value="政府建筑"/>   
+      <Choice alias="others" value="其他"/>      
+    </Choices>
+    
+  <!-- 办公其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_office" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_office_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 商业 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="business" >
+        <!-- <Header value="business"/>     -->
+        <Header value="商业（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_business" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="business">       
+      <Choice alias="commercial_street" value="商业街"/> 
+      <Choice alias="shopping_mall" value="商场"/> 
+      <Choice alias="shop" value="商店"/>     
+      <Choice alias="market" value="市集"/>  
+      <Choice alias="club" value="会所"/>  
+      <Choice alias="others" value="其他"/>      
+    </Choices>
+
+  <!-- 商业其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_business" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_business_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 工业 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="industrial" >
+        <!-- <Header value="industrial"/>     -->
+        <Header value="工业（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_industrial" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="industrial">       
+      <Choice alias="factory" value="厂房"/> 
+      <Choice alias="industrial_park" value="工业园区"/> 
+      <Choice alias="warehouse" value="仓库"/>    
+      <Choice alias="workshop" value="工坊"/>   
+      <Choice alias="power_plant" value="发电厂"/>  
+      <Choice alias="others" value="其他"/>       
+    </Choices>
+
+  <!-- 工业其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_industrial" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_industrial_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 住宅 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="residential" >
+        <!-- <Header value="residential"/>     -->
+        <Header value="住宅（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_residential" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="residential">       
+      <Choice alias="villa" value="别墅"/> 
+      <Choice alias="sales_office" value="售楼处"/> 
+      <Choice alias="commercial_housing" value="商品房"/>    
+      <Choice alias="resettlement_housing" value="安置房"/>   
+      <Choice alias="apartment" value="公寓"/>     
+      <Choice alias="dormitory" value="宿舍"/> 
+      <Choice alias="others" value="其他"/>    
+    </Choices>
+
+  <!-- 住宅其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_residential" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_residential_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 酒旅 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="hotel" >
+        <!-- <Header value="hotel"/>     -->
+        <Header value="酒旅（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_hotel" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="hotel">       
+      <Choice alias="hotel" value="酒店"/> 
+      <Choice alias="hostel" value="旅馆"/> 
+      <Choice alias="others" value="其他"/>   
+    </Choices>
+
+  <!-- 酒旅其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_hotel" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_hotel_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 学校科研 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="educational_and_research" >
+        <!-- <Header value="educational_and_research"/>     -->
+        <Header value="学校科研（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_educational_and_research" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="educational_and_research">       
+      <Choice alias="kindergarten" value="幼儿园"/> 
+      <Choice alias="primary_school" value="小学"/> 
+      <Choice alias="middle_school" value="中学"/> 
+      <Choice alias="university" value="大学"/> 
+      <Choice alias="laboratory" value="实验室"/> 
+      <Choice alias="research_institute" value="研究院"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 学校科研其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_educational_and_research" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_educational_and_research_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+
+  <!-- 交通 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="transportation" >
+        <!-- <Header value="transportation"/>     -->
+        <Header value="交通（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_transportation" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="transportation">       
+      <Choice alias="airport" value="机场"/> 
+      <Choice alias="high_speed_railway_station" value="高铁站"/> 
+      <Choice alias="train_station" value="火车站"/> 
+      <Choice alias="bus_station" value="汽车站"/> 
+      <Choice alias="bus_stop" value="公交站"/> 
+      <Choice alias="subway_station" value="地铁站"/> 
+      <Choice alias="bridge" value="桥"/> 
+      <Choice alias="port" value="港口"/> 
+      <Choice alias="parking_lot" value="停车场"/> 
+      <Choice alias="charging_station" value="充电站"/> 
+      <Choice alias="gas_station" value="加油站"/> 
+      <Choice alias="underground_passage" value="地下通道"/> 
+      <Choice alias="toll_station" value="收费站"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 交通其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_transportation" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_transportation_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 医疗养老 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="medical_and_elderly_care" >
+        <!-- <Header value="medical_and_elderly_care"/>     -->
+        <Header value="医疗养老（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_medical_and_elderly_care" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="medical_and_elderly_care">       
+      <Choice alias="hospital" value="医院"/> 
+      <Choice alias="clinic" value="诊所"/> 
+      <Choice alias="nursing_home" value="养老院"/> 
+      <Choice alias="elderly_activity_center" value="老年活动中心"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 医疗养老其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_medical_and_elderly_care" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_medical_and_elderly_care_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+
+  <!-- 体育 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="sports" >
+        <!-- <Header value="sports"/>     -->
+        <Header value="体育（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_sports" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="sports">       
+      <Choice alias="track_and_field" value="田径场"/> 
+      <Choice alias="soccer_field" value="足球场"/> 
+      <Choice alias="swimming_hall" value="游泳馆"/> 
+      <Choice alias="tennis_hall" value="网球场"/> 
+      <Choice alias="basketball_hall" value="篮球馆"/> 
+      <Choice alias="comprehensive_gymnasium" value="综合体育馆"/> 
+      <Choice alias="fitness_center" value="健身房"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 体育其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_sports" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_sports_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 文化 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="cultural" >
+        <!-- <Header value="cultural"/>     -->
+        <Header value="文化（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_cultural" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="cultural">       
+      <Choice alias="cultural_center" value="文化馆"/> 
+      <Choice alias="theater" value="剧场"/> 
+      <Choice alias="museum" value="博物馆"/> 
+      <Choice alias="art_museum" value="美术馆"/> 
+      <Choice alias="exhibition_hall" value="展览馆"/> 
+      <Choice alias="gallery" value="画廊"/> 
+      <Choice alias="library" value="图书馆"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 文化其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_cultural" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_cultural_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 公共服务 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="public_service" >
+        <!-- <Header value="public_service"/>     -->
+        <Header value="公共服务（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_public_service" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="public_service">       
+      <Choice alias="convention_center" value="会议中心"/> 
+      <Choice alias="community_center" value="社区中心"/> 
+      <Choice alias="fire_station" value="消防站"/> 
+      <Choice alias="police_station" value="警察局"/> 
+      <Choice alias="prison" value="监狱"/> 
+      <Choice alias="public_restroom" value="公共厕所"/> 
+      <Choice alias="cemetery" value="墓地"/> 
+      <Choice alias="temple" value="寺庙"/> 
+      <Choice alias="monastery" value="修道院"/> 
+      <Choice alias="church" value="教堂"/> 
+      <Choice alias="zoo" value="动物园"/> 
+      <Choice alias="botanical_garden" value="植物园"/> 
+      <Choice alias="park" value="公园"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 公共服务其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_public_service" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_public_service_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 农牧业 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="agriclture_and_animal_husbandry" >
+        <!-- <Header value="agriclture_and_animal_husbandry"/>     -->
+        <Header value="农牧业（多选）"/>    
+    </View>
+
+    <Choices name="function_architecture_agriclture_and_animal_husbandry" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="function_architecture" whenChoiceValue="agriclture_and_animal_husbandry">       
+      <Choice alias="farm" value="农场"/> 
+      <Choice alias="greenhouse" value="温室"/> 
+      <Choice alias="livestock_barn" value="畜舍"/> 
+      <Choice alias="breeding_farm" value="养殖场"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 农牧业其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_architecture_agriclture_and_animal_husbandry" whenChoiceValue="others" >
+  		<TextArea name="function_architecture_agriclture_and_animal_husbandry_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 建筑材质 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Material of Architecture"/>     -->
+        <Header value="建筑材质（多选）"/>    
+    </View>
+    
+    <Choices name="material_architecture" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="glass" value="玻璃"/> 
+      <Choice alias="stone" value="石材"/> 
+      <Choice alias="metal" value="金属"/> 
+      <Choice alias="brick" value="砖"/> 
+      <Choice alias="soil" value="土"/> 
+      <Choice alias="coating" value="涂料"/> 
+      <Choice alias="wood" value="木材"/> 
+      <Choice alias="concrete" value="混凝土"/> 
+      <Choice alias="fiber_material" value="纤维"/> 
+      <Choice alias="synthetic_material" value="合成材料"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 建筑材质其他 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="others" >
+  		<TextArea name="material_architecture_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 玻璃材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="glass" >
+        <!-- <Header value="material_architecture_glass_color"/>     -->
+        <Header value="玻璃颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="glass" >
+      <KeyPointLabels name="material_architecture_glass_color" toName="image">
+        <Label alias="material_architecture_glass_color" value="玻璃颜色" background="#FF00C1" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 石材材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="stone" >
+        <!-- <Header value="material_architecture_stone_color"/>     -->
+        <Header value="石材颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="stone" >
+      <KeyPointLabels name="material_architecture_stone_color" toName="image">
+        <Label alias="material_sarchitecture_tone_color" value="石材颜色" background="#00AAFF" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 金属材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="metal" >
+        <!-- <Header value="material_architecture_metal_color"/>     -->
+        <Header value="金属颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="metal" >
+      <KeyPointLabels name="material_architecture_matel_color" toName="image">
+        <Label alias="material_architecture_matel_color" value="金属颜色" background="#00FFD4" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 砖材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="brick" >
+        <!-- <Header value="material_architecture_brick_color"/>     -->
+        <Header value="砖颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="brick" >
+      <KeyPointLabels name="material_architecture_brick_color" toName="image">
+        <Label alias="material_architecture_brick_color" value="砖颜色" background="#E000FF" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 土材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="soil" >
+        <!-- <Header value="material_architecture_soil_color"/>     -->
+        <Header value="土颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="soil" >
+      <KeyPointLabels name="material_architecture_soil_color" toName="image">
+        <Label alias="material_architecture_soil_color" value="土颜色" background="#E0FF00" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 涂料材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="coating" >
+        <!-- <Header value="material_architecture_coating_color"/>     -->
+        <Header value="涂料颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="coating" >
+      <KeyPointLabels name="material_architecture_coating_color" toName="image">
+        <Label alias="material_architecture_coating_color" value="涂料颜色" background="#FF8700" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 木材材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="wood" >
+        <!-- <Header value="material_architecture_wood_color"/>     -->
+        <Header value="木材颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="wood" >
+      <KeyPointLabels name="material_architecture_wood_color" toName="image" showInline="true">
+        <Label alias="material_architecture_wood_color" value="木材颜色" background="#8300FF" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 混凝土材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="concrete" >
+        <!-- <Header value="material_architecture_concrete_color"/>     -->
+        <Header value="混凝土颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="concrete" >
+      <KeyPointLabels name="material_architecture_concrete_color" toName="image" showInline="true">
+        <Label alias="material_architecture_concrete_color" value="混凝土颜色" background="#000000" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 纤维材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="fiber_material" >
+        <!-- <Header value="material_architecture_fiber_material_color"/>     -->
+        <Header value="纤维颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="fiber_material" >
+      <KeyPointLabels name="material_architecture_fiber_material_color" toName="image" showInline="true">
+        <Label alias="material_architecture_fiber_material_color" value="纤维颜色" background="#3AFF00" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 合成材料材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="synthetic_material" >
+        <!-- <Header value="material_architecture_synthetic_material_color"/>     -->
+        <Header value="合成材料颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="synthetic_material" >
+      <KeyPointLabels name="material_architecture_synthetic_material_color" toName="image" showInline="true">
+        <Label alias="material_architecture_synthetic_material_color" value="合成材料颜色" background="#7C00FF" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 其他材质颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="others" >
+        <!-- <Header value="material_architecture_others_material_color"/>     -->
+        <Header value="其他材料颜色（单选标签后进行选择，建议选择2-3点，靠近材质固有色）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="material_architecture" whenChoiceValue="others" >
+      <KeyPointLabels name="material_architecture_others_material_color" toName="image" showInline="true">
+        <Label alias="material_architecture_others_material_color" value="其他材料颜色" background="#5CbbFF" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 尺度 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Scale"/>   -->
+        <Header value="尺度（单选）"/>      
+    </View>
+    
+    <Choices name="scale" toName="image" choice="single" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="detail" value="局部"/> 
+      <Choice alias="single_building" value="单体"/> 
+      <Choice alias="cluster" value="组团"/> 
+      <Choice alias="city" value="城市"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 尺度其他 -->
+    <View visibleWhen="choice-selected" whenTagName="scale" whenChoiceValue="others" >
+  		<TextArea name="scale_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 配景元素 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Background Element"/>    -->
+        <Header value="配景元素（多选）"/>   
+    </View>
+
+    <Choices name="background_element" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="road" value="道路"/> 
+      <Choice alias="water" value="水景"/> 
+      <Choice alias="device" value="装置小品"/> 
+      <Choice alias="plant" value="植被花草"/> 
+      <Choice alias="human" value="人物"/> 
+      <Choice alias="animal" value="动物"/> 
+      <Choice alias="vehicle" value="载具"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 配景元素其他 -->
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="others" >
+  		<TextArea name="background_element_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 配景元素_道路标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="road" >
+        <!-- <Header value="background_element_road_position"/>     -->
+        <Header value="道路（单选标签后进行选择，每处建议选择2点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="road" >
+      <KeyPointLabels name="background_element_road_position" toName="image" showInline="true">
+        <Label alias="background_element_road_position" value="道路" background="#6D753B" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 配景元素_水景标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="water" >
+        <!-- <Header value="background_element_water_position"/>     -->
+        <Header value="水景（单选标签后进行选择，每处建议选择2点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="water" >
+      <KeyPointLabels name="background_element_water_position" toName="image" showInline="true">
+        <Label alias="background_element_water_position" value="水景" background="#753B71" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 配景元素_装置小品标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="device" >
+        <!-- <Header value="background_element_device_position"/>     -->
+        <Header value="装置小品（单选标签后进行选择，每处建议选择2点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="device" >
+      <KeyPointLabels name="background_element_device_position" toName="image" showInline="true">
+        <Label alias="background_element_device_position" value="装置小品" background="#439F83" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 配景元素_花草植被标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="plant" >
+        <!-- <Header value="background_element_plant_position"/>     -->
+        <Header value="花草植被（单选标签后进行选择，每处建议选择2点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="plant" >
+      <KeyPointLabels name="background_element_plant_position" toName="image" showInline="true">
+        <Label alias="background_element_plant_position" value="花草植被" background="#1B2395" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 配景元素_人物标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="human" >
+        <!-- <Header value="background_element_human_position"/>     -->
+        <Header value="人物（单选标签后进行选择，每处建议选择2点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="human" >
+      <KeyPointLabels name="background_element_human_position" toName="image" showInline="true">
+        <Label alias="background_element_human_position" value="人物" background="#0039CE" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 配景元素_动物标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="animal" >
+        <!-- <Header value="background_element_animal_position"/>     -->
+        <Header value="动物（单选标签后进行选择，每处建议选择2点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="animal" >
+      <KeyPointLabels name="background_element_animal_position" toName="image" showInline="true">
+        <Label alias="background_element_animal_position" value="动物" background="#F1E473" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 配景元素_载具标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="vehicle" >
+        <!-- <Header value="background_element_vehicle_position"/>     -->
+        <Header value="载具（单选标签后进行选择，每处建议选择2点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="vehicle" >
+      <KeyPointLabels name="background_element_vehicle_position" toName="image" showInline="true">
+        <Label alias="background_element_vehicle_position" value="载具" background="#50E0CF" />
+      </KeyPointLabels>
+    </View>
+  
+  <!-- 配景元素_其他标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="others" >
+        <!-- <Header value="background_element_others_position"/>     -->
+        <Header value="其他（单选标签后进行选择，每处建议选择2点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="background_element" whenChoiceValue="others" >
+      <KeyPointLabels name="background_element_others_position" toName="image" showInline="true">
+        <Label alias="background_element_others_position" value="其他" background="#63E5CF" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 背景环境 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Background Environment"/>     -->
+        <Header value="背景环境（多选）"/>    
+    </View>
+
+    <Choices name="background_environment" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="city" value="都市"/> 
+      <Choice alias="rural" value="乡镇"/> 
+      <Choice alias="field" value="田地"/> 
+      <Choice alias="wetland" value="湿地"/> 
+      <Choice alias="river_and_sea" value="河海"/> 
+      <Choice alias="stream" value="溪流"/> 
+      <Choice alias="desert" value="沙漠"/> 
+      <Choice alias="grassland" value="草地"/> 
+      <Choice alias="rainforest" value="雨林"/> 
+      <Choice alias="mountain" value="山地"/> 
+      <Choice alias="hill" value="丘陵"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 背景环境其他 -->
+    <View visibleWhen="choice-selected" whenTagName="background_environment" whenChoiceValue="others" >
+  		<TextArea name="background_environment_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 前景环境 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Foreground Environment"/>     -->
+        <Header value="前景环境（多选）"/>    
+    </View>
+
+    <Choices name="foreground_environment" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="city" value="都市"/> 
+      <Choice alias="rural" value="乡镇"/> 
+      <Choice alias="field" value="田地"/> 
+      <Choice alias="wetland" value="湿地"/> 
+      <Choice alias="river_and_sea" value="河海"/> 
+      <Choice alias="stream" value="溪流"/> 
+      <Choice alias="desert" value="沙漠"/> 
+      <Choice alias="grassland" value="草地"/> 
+      <Choice alias="rainforest" value="雨林"/> 
+      <Choice alias="mountain" value="山地"/> 
+      <Choice alias="hill" value="丘陵"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 前景环境其他 -->
+    <View visibleWhen="choice-selected" whenTagName="foreground_environment" whenChoiceValue="others" >
+  		<TextArea name="foreground_environment_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 基础风格 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Basic Style"/>     -->
+        <Header value="基础风格（多选）"/>    
+    </View>
+
+    <Choices name="basic_style" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="modern" value="现代"/> 
+      <Choice alias="chinese" value="中式"/> 
+      <Choice alias="european" value="欧式"/> 
+      <Choice alias="japanese" value="日式"/> 
+      <Choice alias="irregular" value="非线"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 基础风格其他 -->
+    <View visibleWhen="choice-selected" whenTagName="basic_style" whenChoiceValue="others" >
+  		<TextArea name="basic_style_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 高度 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Height"/>     -->
+        <Header value="高度（单选）"/> 
+    </View>
+
+    <Choices name="height" toName="image" choice="single" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="low_rise" value="低层"/> 
+      <Choice alias="multistorey" value="多层"/> 
+      <Choice alias="high_rise" value="高层"/> 
+      <Choice alias="super_high_rise" value="超高层"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 高度其他 -->
+    <View visibleWhen="choice-selected" whenTagName="height" whenChoiceValue="others" >
+  		<TextArea name="height_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 光源类型 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Type of Light"/>     -->
+        <Header value="光源类型（多选）"/> 
+    </View>
+
+    <Choices name="type_of_light" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="sunlight" value="太阳光"/> 
+      <Choice alias="ambient_light" value="环境光"/> 
+      <Choice alias="artificial_light" value="人工光"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 光源类型其他 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_light" whenChoiceValue="others" >
+  		<TextArea name="type_of_light_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 太阳光光线颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_light" whenChoiceValue="sunlight" >
+        <!-- <Header value="sunlight_light_color"/>     -->
+        <Header value="太阳光光线颜色（单选标签后进行选择，建议选择2-3点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="type_of_light" whenChoiceValue="sunlight" >
+      <KeyPointLabels name="sunlight_light_color" toName="image">
+        <Label alias="sunlight_light_color" value="太阳光光线颜色" background="blue" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 环境光光线颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_light" whenChoiceValue="ambient_light" >
+        <!-- <Header value="ambient_light_light_color"/>     -->
+        <Header value="环境光光线颜色（单选标签后进行选择，建议选择2-3点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="type_of_light" whenChoiceValue="ambient_light" >
+      <KeyPointLabels name="ambient_light_light_color" toName="image">
+        <Label alias="ambient_light_light_color" value="环境光光线颜色" background="#7B7777" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 人工光光线颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_light" whenChoiceValue="artificial_light" >
+        <!-- <Header value="artificial_light_light_color"/>     -->
+        <Header value="人工光光线颜色（单选标签后进行选择，建议选择2-3点）"/>  
+    </View>
+    
+    <View visibleWhen="choice-selected" whenTagName="type_of_light" whenChoiceValue="artificial_light" >
+      <KeyPointLabels name="artificial_light_light_color" toName="image">
+        <Label alias="artificial_light_light_color" value="人工光光线颜色" background="#7A4477" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 其他光线颜色标记点 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_light" whenChoiceValue="others" >
+        <!-- <Header value="others_light_light_color"/>     -->
+        <Header value="其他光线颜色（单选标签后进行选择，建议选择2-3点）"/>  
+    </View>
+
+    <View visibleWhen="choice-selected" whenTagName="type_of_light" whenChoiceValue="others" >
+      <KeyPointLabels name="others_light_light_color" toName="image">
+        <Label alias="others_light_light_color" value="其他光光线颜色" background="#BBAA86" />
+      </KeyPointLabels>
+    </View>
+
+  <!-- 主光方向 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Direction of Light"/>     -->
+        <Header value="主光方向（多选）"/>  
+    </View>
+
+    <Choices name="direction_of_light" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="top_light" value="顶光"/> 
+      <Choice alias="back_light" value="背光"/> 
+      <Choice alias="front_light" value="顺光"/> 
+      <Choice alias="side_light" value="侧光"/> 
+    </Choices>
+
+  <!-- 光线强度 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture" >
+        <!-- <Header value="Density of Light"/>    -->
+        <Header value="光线强度（单选）"/>   
+    </View>
+
+    <Choices name="density_of_light" toName="image" choice="single" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="architecture">       
+      <Choice alias="strong" value="强烈"/> 
+      <Choice alias="soft" value="柔和"/> 
+    </Choices>
+
+  <!-- 室内分类 -->
+    <View visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="interior" >
+        <!-- <Header value="Type of Interior"/>     -->
+        <Header value="室内分类（单选）"/>   
+    </View>
+    
+    <Choices name="type_of_interior" toName="image" choice="single" showInline="true" visibleWhen="choice-selected" whenTagName="design_type" whenChoiceValue="interior"> 
+      <Choice alias="public" value="公装"/> 
+      <Choice alias="private" value="家装"/> 
+    </Choices>
+
+  <!-- 公装功能 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_interior" whenChoiceValue="public" >
+        <!-- <Header value="Function of Public Interior"/>     -->
+        <Header value="公装功能（多选）"/>   
+    </View>
+
+    <Choices name="function_of_public_interior" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="type_of_interior" whenChoiceValue="public" > 
+      <Choice alias="business" value="商业"/> 
+      <Choice alias="office" value="办公"/> 
+      <Choice alias="industrial" value="工业"/> 
+      <Choice alias="restaurant" value="餐食"/> 
+      <Choice alias="hotel" value="酒旅"/> 
+      <Choice alias="educational" value="教育"/> 
+      <Choice alias="transporatation" value="交通"/> 
+      <Choice alias="medical_and_elderly_care" value="医养"/> 
+      <Choice alias="sports" value="体育"/> 
+      <Choice alias="performance" value="演艺"/> 
+      <Choice alias="exhibition" value="展览"/> 
+      <Choice alias="public_service" value="公共服务"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 公装功能其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_of_public_interior" whenChoiceValue="others" >
+  		<TextArea name="function_of_public_interior_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 家装功能 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_interior" whenChoiceValue="private" >
+        <!-- <Header value="Function of Private Interior"/>   -->
+        <Header value="家装功能（多选）"/>   
+    </View>
+    
+    <Choices name="function_of_private_interior" toName="image" choice="multiple" showInline="true" visibleWhen="choice-selected" whenTagName="type_of_interior" whenChoiceValue="private" > 
+      <Choice alias="bedroom" value="卧室"/> 
+      <Choice alias="living_room" value="客厅"/> 
+      <Choice alias="toilet" value="卫生间"/> 
+      <Choice alias="bathroom" value="浴室"/> 
+      <Choice alias="kitchen" value="厨房"/> 
+      <Choice alias="cloakroom" value="衣帽间"/> 
+      <Choice alias="entrance" value="玄关"/> 
+      <Choice alias="balcony" value="阳台"/> 
+      <Choice alias="study_room" value="书房"/> 
+      <Choice alias="child_room" value="儿童房"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 家装功能其他 -->
+    <View visibleWhen="choice-selected" whenTagName="function_of_private_interior" whenChoiceValue="others" >
+  		<TextArea name="function_of_private_interior_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 家装尺度 -->
+    <View visibleWhen="choice-selected" whenTagName="type_of_interior" whenChoiceValue="private" >
+        <!-- <Header value="Scale of Private Interior"/>    -->
+        <Header value="家装尺度（单选）"/>  
+    </View>
+    
+    <Choices name="scale_of_private_interior" toName="image" choice="single" showInline="true" visibleWhen="choice-selected" whenTagName="type_of_interior" whenChoiceValue="private" > 
+      <Choice alias="flat" value="平层"/> 
+      <Choice alias="loft" value="复式"/> 
+      <Choice alias="duplex" value="跃层"/> 
+      <Choice alias="villa" value="别墅"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 家装尺度其他 -->
+    <View visibleWhen="choice-selected" whenTagName="scale_of_private_interior" whenChoiceValue="others" >
+  		<TextArea name="scale_of_private_interior_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  <!-- 居室数量 -->
+    <View visibleWhen="choice-selected" whenTagName="scale_of_private_interior" whenChoiceValue="flat" >
+        <!-- <Header value="Number of Bedroom"/>     -->
+        <Header value="居室数量（单选）"/>   
+    </View>
+    
+    <Choices name="number_of_bedroom_of_pravite_interior" toName="image" choice="single" showInline="true" visibleWhen="choice-selected" whenTagName="scale_of_private_interior" whenChoiceValue="flat" > 
+      <Choice alias="one_bedroom" value="一居室"/> 
+      <Choice alias="two_bedrooms" value="二居室"/> 
+      <Choice alias="three_bedrooms" value="三居室"/> 
+      <Choice alias="four_bedrooms" value="四居室"/> 
+      <Choice alias="more_than_four_bedroomt" value="四居以上"/> 
+      <Choice alias="others" value="其他"/>  
+    </Choices>
+
+  <!-- 居室数量其他 -->
+    <View visibleWhen="choice-selected" whenTagName="number_of_bedroom_of_pravite_interior" whenChoiceValue="others" >
+  		<TextArea name="number_of_bedroom_of_pravite_interior_others" toName="image" transcription="true" showSubmitButton="true"></TextArea> 
+    </View>
+
+  </View>
+</View>

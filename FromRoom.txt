@@ -1,0 +1,123 @@
+{
+    "id": "79bf4t0renrge0cfcwwt8992yr",
+    "model": "idea-research/ram-grounded-sam",
+    "version": "80a2aede4cf8e3c9f26e96c308d45b23c350dd36f1c381de790715007f1ac0ad",
+    "input": {
+        "input_image": "https://cdn.discordapp.com/attachments/1089791978679578656/1238801231296729129/inner_1000001.jpg?ex=66409b0d&is=663f498d&hm=9d5c8f8c864a6ae5ad33f95a76253df57de6717c7ca4f195e143b9443839af61&"
+    },
+    "logs": "Before NMS: 10 boxes\nAfter NMS: 8 boxes\n",
+    "output": {
+        "json_data": {
+            "mask": [
+                {
+                    "label": "background",
+                    "value": 0
+                },
+                {
+                    "box": [
+                        311.7099609375,
+                        1490.572265625,
+                        995.6397705078125,
+                        2039.4683837890625
+                    ],
+                    "label": "armchair",
+                    "logit": 0.43,
+                    "value": 1
+                },
+                {
+                    "box": [
+                        800.1512451171875,
+                        1594.2574462890625,
+                        4078.84912109375,
+                        2039.962158203125
+                    ],
+                    "label": "carpet",
+                    "logit": 0.38,
+                    "value": 2
+                },
+                {
+                    "box": [
+                        9.06884765625,
+                        10.80731201171875,
+                        4082.9921875,
+                        2036.506591796875
+                    ],
+                    "label": "room",
+                    "logit": 0.34,
+                    "value": 3
+                },
+                {
+                    "box": [
+                        2700.958984375,
+                        1384.4315185546875,
+                        3908.1044921875,
+                        2027.69140625
+                    ],
+                    "label": "armchair",
+                    "logit": 0.33,
+                    "value": 4
+                },
+                {
+                    "box": [
+                        1500.501708984375,
+                        1207.88134765625,
+                        2480.928955078125,
+                        1370.305908203125
+                    ],
+                    "label": "fireplace",
+                    "logit": 0.33,
+                    "value": 5
+                },
+                {
+                    "box": [
+                        1491.428955078125,
+                        1346.6331787109375,
+                        3064.78955078125,
+                        1738.2086181640625
+                    ],
+                    "label": "couch",
+                    "logit": 0.33,
+                    "value": 6
+                },
+                {
+                    "box": [
+                        440.1929931640625,
+                        3.41204833984375,
+                        3301.994140625,
+                        603.3924560546875
+                    ],
+                    "label": "ceiling",
+                    "logit": 0.31,
+                    "value": 7
+                },
+                {
+                    "box": [
+                        1611.223388671875,
+                        1636.600830078125,
+                        1992.151611328125,
+                        1897.64404296875
+                    ],
+                    "label": "stool",
+                    "logit": 0.31,
+                    "value": 8
+                }
+            ],
+            "tags": "armchair, carpet, ceiling, chair, couch, fireplace, furniture, hassock, living room, modern, room, stool, white"
+        },
+        "masked_img": null,
+        "rounding_box_img": null,
+        "tags": "armchair, carpet, ceiling, chair, couch, fireplace, furniture, hassock, living room, modern, room, stool, white"
+    },
+    "error": null,
+    "status": "succeeded",
+    "created_at": "2024-05-11T10:35:46.165Z",
+    "started_at": "2024-05-11T10:36:50.450125Z",
+    "completed_at": "2024-05-11T10:36:54.20003Z",
+    "urls": {
+        "cancel": "https://api.replicate.com/v1/predictions/79bf4t0renrge0cfcwwt8992yr/cancel",
+        "get": "https://api.replicate.com/v1/predictions/79bf4t0renrge0cfcwwt8992yr"
+    },
+    "metrics": {
+        "predict_time": 3.749905
+    }
+}

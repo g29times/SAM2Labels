@@ -1,0 +1,32 @@
+[{
+    "id": 1,
+    "annotations": [
+        {
+            "id": 1,
+            "completed_by": 1,
+            "result": [
+                {
+                    "original_width": 1456,
+                    "original_height": 816,
+                    "image_rotation": 0,
+                    "value": {
+						"x": 42.45742092457421,
+						"y": 3.907256333190211,
+						"width": 50.243309002433094,
+						"height": 95.29364057058348,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "robot"
+                        ]
+                    },
+                    "id": "_bvU1v7MpB",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                }
+            ],
+        "was_cancelled":false,"ground_truth":false,"created_at":"2024-05-10T11:31:03.293095Z","updated_at":"2024-05-10T11:56:29.959859Z","draft_created_at":null,"lead_time":848.264,"prediction":{},"result_count":0,"unique_id":"07977e78-6857-420c-a495-61cbc509b92b","import_id":null,"last_action":null,"task":10,"project":3,"updated_by":1,"parent_prediction":null,"parent_annotation":null,"last_created_by":null
+        }
+    ],"file_upload":"bd1071e6-robot.jpg","drafts":[],"predictions":[],"data":{"image":"\/data\/upload\/3\/bd1071e6-robot.jpg"},"meta":{},"created_at":"2024-05-10T11:25:38.136013Z","updated_at":"2024-05-10T11:56:30.063731Z","inner_id":6,"total_annotations":1,"cancelled_annotations":0,"total_predictions":0,"comment_count":0,"unresolved_comment_count":0,"last_comment_updated_at":null,"project":3,"updated_by":1,"comment_authors":[]
+}]

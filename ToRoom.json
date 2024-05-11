@@ -1,0 +1,207 @@
+[{
+    "id": 1,
+    "annotations": [
+        {
+            "id": 1,
+            "completed_by": 1,
+            "result": [
+                {
+                    "original_width": 4096,
+                    "original_height": 2048,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 7.610106468200684,
+                        "y": 72.7818489074707,
+                        "width": 16.697505116462708,
+                        "height": 26.801568269729614,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "armchair"
+                        ]
+                    },
+                    "id": "6CaWYK5hNJ",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 4096,
+                    "original_height": 2048,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 19.534942507743835,
+                        "y": 77.84460186958313,
+                        "width": 80.04633486270905,
+                        "height": 21.762925386428833,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "carpet"
+                        ]
+                    },
+                    "id": "5auOxaSzgW",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 4096,
+                    "original_height": 2048,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 0.22140741348266602,
+                        "y": 0.5277007818222046,
+                        "width": 99.46101903915405,
+                        "height": 98.91109764575958,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "room"
+                        ]
+                    },
+                    "id": "3qC0PPsJBI",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 4096,
+                    "original_height": 2048,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 65.94138145446777,
+                        "y": 67.5991952419281,
+                        "width": 29.471325874328613,
+                        "height": 31.40917420387268,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "armchair"
+                        ]
+                    },
+                    "id": "vDdxeo3PS5",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 4096,
+                    "original_height": 2048,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 36.63334250450134,
+                        "y": 58.97858142852783,
+                        "width": 23.936212062835693,
+                        "height": 7.930886745452881,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "fireplace"
+                        ]
+                    },
+                    "id": "GdUApqeDwV",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 4096,
+                    "original_height": 2048,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 36.411839723587036,
+                        "y": 65.753573179245,
+                        "width": 38.412123918533325,
+                        "height": 19.11989450454712,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "couch"
+                        ]
+                    },
+                    "id": "kyPOoEHwKj",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 4096,
+                    "original_height": 2048,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 10.746899247169495,
+                        "y": 0.1666039228439331,
+                        "width": 69.86819207668304,
+                        "height": 29.295918345451355,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "ceiling"
+                        ]
+                    },
+                    "id": "4dGBpzHhnx",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                },
+                {
+                    "original_width": 4096,
+                    "original_height": 2048,
+                    "image_rotation": 0,
+                    "value": {
+                        "x": 39.33650851249695,
+                        "y": 79.91214990615845,
+                        "width": 9.300005435943604,
+                        "height": 12.746250629425049,
+                        "rotation": 0,
+                        "rectanglelabels": [
+                            "stool"
+                        ]
+                    },
+                    "id": "COrECxvQzI",
+                    "from_name": "label",
+                    "to_name": "image",
+                    "type": "rectanglelabels",
+                    "origin": "manual"
+                }
+            ],
+            "was_cancelled": false,
+            "ground_truth": false,
+            "created_at": "2024-05-10T11:31:03.293095Z",
+            "updated_at": "2024-05-10T11:56:29.959859Z",
+            "draft_created_at": null,
+            "lead_time": 848.264,
+            "prediction": {},
+            "result_count": 0,
+            "unique_id": "07977e78-6857-420c-a495-61cbc509b92b",
+            "import_id": null,
+            "last_action": null,
+            "task": 10,
+            "project": 3,
+            "updated_by": 1,
+            "parent_prediction": null,
+            "parent_annotation": null,
+            "last_created_by": null
+        }
+    ],
+    "file_upload": "6540bb67-inner_1000001.jpg",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+        "image": "\/data\/upload\/7\/6540bb67-inner_1000001.jpg"
+    },
+    "meta": {},
+    "created_at": "2024-05-11T05:52:10.860735Z",
+    "updated_at": "2024-05-11T05:54:02.451356Z",
+    "inner_id": 1,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 5,
+    "updated_by": 1,
+    "comment_authors": []
+}]
