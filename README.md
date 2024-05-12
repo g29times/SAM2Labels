@@ -46,6 +46,8 @@ https://labelstud.io/guide/install
     Quit the server with CTRL-BREAK.
     [2024-05-12 23:36:06,440] [django.server::log_message::161] [INFO] "GET / HTTP/1.1" 302 0
 ```
+## 安装注意
+1 安装时，使用powershell而不是git bash，安装好venv之后，使用两者进行`python-v`，输出也不同  
 ## 安装问题
 1 PostgreSQL adapter  
 `python310 -m pip install psycopg2-binary` https://www.psycopg.org/docs/install.html#build-prerequisites  
