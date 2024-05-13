@@ -1,8 +1,8 @@
+# kimi
 import json
-import sys
 import random
 import string
-import main
+import coordinates
 
 def generate_unique_id(length=10):
     # 确保ID长度不超过可用字符集的组合数
@@ -21,16 +21,27 @@ def read_json_file(file_path):
 
 # 转换函数
 def convert_from_abcd_to_xywh(abcd, label, width, height):
-    x, y, w, h = main.abcd_to_xywh(abcd[0], abcd[1], abcd[2], abcd[3], width, height)
+    x, y, w, h = coordinates.abcd_to_xywh(abcd[0], abcd[1], abcd[2], abcd[3], width, height)
+    xywh = x, y, w, h
+    print(f"Absolute coordinates {abcd[0], abcd[1], abcd[2], abcd[3]} convert to XYWH format: {xywh}")
     return {"x": x, "y": y, "width": w, "height": h, "rotation": 0, "rectanglelabels": [label]}
 
-# 主函数
-def convert_abcd_to_xywh(from_abcd_file, to_xywh_file, original_width, original_height):
-    # 从文件中读取FromABCD的JSON数据
-    from_abcd_json = read_json_file(from_abcd_file)
+def convert_json(json_input):
+    convert_file(json_input)
 
+# 主函数
+def convert_file(json_input, from_abcd_file="", to_xywh_file="converted.json", original_width=1024, original_height=1024):
+    if(json_input is not None and json_input != ""):
+        # print("--- json_input ---")
+        from_abcd_json = json_input
+    elif(from_abcd_file is not None):
+        # 从文件中读取FromABCD的JSON数据
+        from_abcd_json = read_json_file(from_abcd_file)
+    else:
+        return
+    
     # 创建ToXYWH的JSON结构
-    to_xywh_json = {
+    to_xywh_json = [{
         "id": 1,
         "annotations": [{
             "id": 1,
@@ -54,23 +65,23 @@ def convert_abcd_to_xywh(from_abcd_file, to_xywh_file, original_width, original_
             "parent_annotation":None,
             "last_created_by":None
         }],
-        "file_upload":"5f553810-label.png",
+        "file_upload":"update-label.png",
         "drafts":[],
         "predictions":[],
-        "data":{"image":"\/data\/upload\/6\/5f553810-label.png"},
+        "data":{"image":"\/data\/upload\/n\/update-label.png"},
         "meta":{},
         "created_at":"2024-05-11T05:52:10.860735Z",
         "updated_at":"2024-05-11T05:54:02.451356Z",
         "inner_id":1,"total_annotations":1,"cancelled_annotations":0,
         "total_predictions":0,"comment_count":0,"unresolved_comment_count":0,
         "last_comment_updated_at":None,"project":5,"updated_by":1,"comment_authors":[]
-    }
+    }]
 
     # 执行转换
     for item in from_abcd_json["output"]["json_data"]["mask"]:
         if "box" in item and "label" in item:
             xywh = convert_from_abcd_to_xywh(item["box"], item["label"], original_width, original_height)
-            to_xywh_json["annotations"][0]["result"].append({
+            to_xywh_json[0]["annotations"][0]["result"].append({
                 "original_width": original_width,
                 "original_height": original_height,
                 "image_rotation": 0,
@@ -89,16 +100,17 @@ def convert_abcd_to_xywh(from_abcd_file, to_xywh_file, original_width, original_
     with open(to_xywh_file, 'w') as outfile:
         json.dump(to_xywh_json, outfile, indent=4)
 
-# 确保有足够的命令行参数
-if len(sys.argv) != 5:
-    print("Usage: python script.py from_abcd_file to_xywh_file original_width original_height")
-    sys.exit(1)
+# # 测试 python converte.py FromA.txt ToA.json 640 640
+# # 确保有足够的命令行参数
+# if len(sys.argv) != 5:
+#     print("Usage: python script.py from_abcd_file to_xywh_file original_width original_height")
+#     sys.exit(1)
 
-# 从命令行参数中获取文件路径和图像尺寸
-from_abcd_file = sys.argv[1]
-to_xywh_file = sys.argv[2]
-original_width = int(sys.argv[3])
-original_height = int(sys.argv[4])
+# # 从命令行参数中获取文件路径和图像尺寸
+# from_abcd_file = sys.argv[1]
+# to_xywh_file = sys.argv[2]
+# original_width = int(sys.argv[3])
+# original_height = int(sys.argv[4])
 
-# 执行转换
-convert_abcd_to_xywh(from_abcd_file, to_xywh_file, original_width, original_height)
+# # 执行转换
+# convert_file("", from_abcd_file, to_xywh_file, original_width, original_height)

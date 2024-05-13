@@ -7,60 +7,60 @@
                 "completed_by": 1,
                 "result": [
                     {
-                        "original_width": 1456,
-                        "original_height": 816,
+                        "original_width": 1024,
+                        "original_height": 1024,
                         "image_rotation": 0,
                         "value": {
-                            "x": 42.45742092457421,
-                            "y": 3.907256333190211,
-                            "width": 50.243309002433094,
-                            "height": 95.29364057058348,
+                            "x": 0.17854124307632446,
+                            "y": 1.68808251619339,
+                            "width": 31.930606067180634,
+                            "height": 37.36712783575058,
                             "rotation": 0,
                             "rectanglelabels": [
-                                "robot"
+                                "boy"
                             ]
                         },
-                        "id": "shD-p19yj7",
+                        "id": "pAtmate0nm",
                         "from_name": "label",
                         "to_name": "image",
                         "type": "rectanglelabels",
                         "origin": "manual"
                     },
                     {
-                        "original_width": 1456,
-                        "original_height": 816,
+                        "original_width": 1024,
+                        "original_height": 1024,
                         "image_rotation": 0,
                         "value": {
-                            "x": 0.24330900243309003,
-                            "y": 76.6256380897858,
-                            "width": 27.128953771289538,
-                            "height": 21.48990983254616,
+                            "x": 16.08753800392151,
+                            "y": 23.24020117521286,
+                            "width": 6.0487911105155945,
+                            "height": 2.809794247150421,
                             "rotation": 0,
                             "rectanglelabels": [
-                                "stone"
+                                "smile"
                             ]
                         },
-                        "id": "9fyM8mruzP",
+                        "id": "SJVRfpjCV6",
                         "from_name": "label",
                         "to_name": "image",
                         "type": "rectanglelabels",
                         "origin": "manual"
                     },
                     {
-                        "original_width": 1456,
-                        "original_height": 816,
+                        "original_width": 1024,
+                        "original_height": 1024,
                         "image_rotation": 0,
                         "value": {
-                            "x": 18.856447688564476,
-                            "y": 60.12833357187157,
-                            "width": 10.583941605839414,
-                            "height": 11.287629406993936,
+                            "x": 14.788472652435303,
+                            "y": 30.163738131523132,
+                            "width": 6.501901149749756,
+                            "height": 8.902356028556824,
                             "rotation": 0,
                             "rectanglelabels": [
-                                "floor"
+                                "tie"
                             ]
                         },
-                        "id": "0XPvLHtqLz",
+                        "id": "HJz75SnKJz",
                         "from_name": "label",
                         "to_name": "image",
                         "type": "rectanglelabels",
@@ -73,9 +73,7 @@
                 "updated_at": "2024-05-10T11:56:29.959859Z",
                 "draft_created_at": null,
                 "lead_time": 848.264,
-                "prediction": {
-
-                },
+                "prediction": {},
                 "result_count": 0,
                 "unique_id": "07977e78-6857-420c-a495-61cbc509b92b",
                 "import_id": null,
@@ -88,19 +86,13 @@
                 "last_created_by": null
             }
         ],
-        "file_upload": "bd1071e6-robot.jpg",
-        "drafts": [
-
-        ],
-        "predictions": [
-
-        ],
+        "file_upload": "update-label.png",
+        "drafts": [],
+        "predictions": [],
         "data": {
-            "image": "\/data\/upload\/3\/bd1071e6-robot.jpg"
+            "image": "\\/data\\/upload\\/n\\/update-label.png"
         },
-        "meta": {
-
-        },
+        "meta": {},
         "created_at": "2024-05-11T05:52:10.860735Z",
         "updated_at": "2024-05-11T05:54:02.451356Z",
         "inner_id": 1,
@@ -112,8 +104,6 @@
         "last_comment_updated_at": null,
         "project": 5,
         "updated_by": 1,
-        "comment_authors": [
-
-        ]
+        "comment_authors": []
     }
 ]

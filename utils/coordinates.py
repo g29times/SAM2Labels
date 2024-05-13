@@ -22,8 +22,8 @@ def abcd_to_xywh(a, b, c, d, width, height):
 
 # Example usage:
 # For an image of 1500x1000 pixels, convert the absolute coordinates {150, 100, 450, 300} to XYWH.
-a, b, c, d = 571, 22, 1359, 810
-width, height = 1456, 816
-xywh = abcd_to_xywh(a, b, c, d, width, height)
+# a, b, c, d = 571, 22, 1359, 810
+# width, height = 1456, 816
+# xywh = abcd_to_xywh(a, b, c, d, width, height)
 
-print(f"Absolute coordinates {a, b, c, d} convert to XYWH format: {xywh}")
+# print(f"Absolute coordinates {a, b, c, d} convert to XYWH format: {xywh}")
