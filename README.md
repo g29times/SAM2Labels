@@ -1,24 +1,29 @@
 # TODO
-生成的外部文件路径\/data\/upload  
 多文件处理  
 训练SAM  
 扩展XYWH SAM不规则轮廓选中  
+项目编号需要用户输入  
 ## 已支持
+生成的外部文件路径/data/upload  使用单斜线即可  
 单图多标签  
 id唯一  
 
+# 依赖说明
+pip install Pillow（PIL的一个分支） 获取图片的宽度和高度  
 
 # 使用
 ## label studio
 1 下载一张图片  
 2 进行SAM解析（postman或gen.py），结果保存为xxx.txt  
 3 转换坐标 `python converte.py From.txt To.json width height`  
-4 启动label studio，创建项目 - 导入图片 - 导入To.json  
+4 启动 `label-studio start`，创建项目 - 导入图片 - 导入To.json  
 生成的结果尚需手动处理：`1 外层括号 2 文件路径 3 在label系统建立对应的新tag 4 导入label`  
 * 导入另一台机器的步骤：`1 导出To.json 2 新机器创建项目-打标-导出-获取图片url 3 替换To.json中的文件路径 4 导入`  
 ## g-sam
+`python gen.py`
 输入公网url的图片地址，先调用gen，再轮询get
 ## streamlit
+`streamlit run streamlit\streamlit-rounds.py`
 Pipeline：上传图片 - 生成url - 调用gen - 调用converte.py
 
 

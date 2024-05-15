@@ -20,7 +20,7 @@
                                 "boy"
                             ]
                         },
-                        "id": "B30P5mffVI",
+                        "id": "IA7Tot5Jnp",
                         "from_name": "label",
                         "to_name": "image",
                         "type": "rectanglelabels",
@@ -40,7 +40,7 @@
                                 "smile"
                             ]
                         },
-                        "id": "cWGVh2Qy3S",
+                        "id": "P4WOSIgjet",
                         "from_name": "label",
                         "to_name": "image",
                         "type": "rectanglelabels",
@@ -60,7 +60,7 @@
                                 "tie"
                             ]
                         },
-                        "id": "ejjEQj6UKM",
+                        "id": "Bpu5L0d1zz",
                         "from_name": "label",
                         "to_name": "image",
                         "type": "rectanglelabels",
@@ -86,15 +86,15 @@
                 "last_created_by": null
             }
         ],
-        "file_upload": "head.png",
+        "file_upload": "update-label.png",
         "drafts": [],
         "predictions": [],
         "data": {
-            "image": "\\/data\\/upload\\/n\\/head.png"
+            "image": "\\/data\\/upload\\/n\\/update-label.png"
         },
         "meta": {},
-        "created_at": "2024-05-15T06:32:52.597762Z",
-        "updated_at": "2024-05-15T06:32:52.597762Z",
+        "created_at": "2024-05-11T05:52:10.860735Z",
+        "updated_at": "2024-05-11T05:54:02.451356Z",
         "inner_id": 1,
         "total_annotations": 1,
         "cancelled_annotations": 0,
